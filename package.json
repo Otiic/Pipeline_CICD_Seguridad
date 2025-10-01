@@ -6,15 +6,29 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {
+   "scripts": {
     "test": "jest --coverage",
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "test:watch": "jest --watch",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
-  "keywords": ["ci-cd", "security", "github-actions"],
+  "keywords": [
+    "ci-cd",
+    "security",
+    "github-actions"
+  ],
   "author": "Franco",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10"
   }
 }
