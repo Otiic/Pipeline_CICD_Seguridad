@@ -1,0 +1,20 @@
+{
+  "name": "pipeline_cicd_seguridad",
+  "version": "1.0.0",
+  "description": "Resolución de la parte A del Trabajo Práctico N°2 de Seguridad. Pipeline CI/CD con gestión segura de secretos.",
+  "main": "src/app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": ["ci-cd", "security", "github-actions"],
+  "author": "Franco",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
