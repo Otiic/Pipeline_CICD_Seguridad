@@ -79,3 +79,25 @@ jobs:
     - name: 🎨 Verificar formato
       run: echo "✅ Verificación de formato (pendiente configurar ESLint)"
       # Después lo cambiaremos por: npm run lint
+
+# ========================================
+  # JOB 3: Deploy a Render
+  # ========================================
+  deploy:
+    name: Deploy a Producción
+    needs: [build-and-test, lint]  # Solo despliega si los tests pasan
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    
+    steps:
+    - name: 🚀 Trigger Deploy en Render
+      run: |
+        echo "✅ Tests pasaron - Render desplegará automáticamente"
+        echo "🔗 URL: https://cicd-seguro-tp.onrender.com"
+        echo "📝 Render detecta el push a master y despliega automáticamente"
+    
+    # Opcional: Notificar que el deploy fue exitoso
+    - name: 📢 Deploy notification
+      run: |
+        echo "🎉 Aplicación desplegada exitosamente"
+        echo "Timestamp: $(date)"

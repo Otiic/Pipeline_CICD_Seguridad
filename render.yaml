@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: cicd-seguro-tp
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        generateValue: true
+      - key: WEATHER_API_KEY
+        sync: false  # Este se configura manualmente en Render
