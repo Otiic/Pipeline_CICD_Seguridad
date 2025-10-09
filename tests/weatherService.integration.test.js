@@ -4,20 +4,25 @@ const WeatherService = require('../src/weatherService');
 // Solo se ejecuta si hay API key configurada
 describe('WeatherService - Integration Tests', () => {
   let weatherService;
+  const hasValidApiKey = process.env.WEATHER_API_KEY && 
+                         process.env.WEATHER_API_KEY !== 'test_key_for_ci';
 
   beforeAll(() => {
-    // Verificar que hay API key
-    if (!process.env.WEATHER_API_KEY || process.env.WEATHER_API_KEY === 'test_key_for_ci') {
+    if (!hasValidApiKey) {
       console.log('⚠️ Skipping integration tests - No valid API key');
     }
   });
 
   beforeEach(() => {
-    weatherService = new WeatherService();
+    if (hasValidApiKey) {
+      weatherService = new WeatherService();
+    }
   });
 
-  // Este test se salta si no hay API key válida
-  test.skipIf(!process.env.WEATHER_API_KEY || process.env.WEATHER_API_KEY === 'test_key_for_ci')(
+  // Usar test.skip si no hay API key válida
+  const conditionalTest = hasValidApiKey ? test : test.skip;
+
+  conditionalTest(
     'debe obtener clima real de Madrid',
     async () => {
       const result = await weatherService.getCurrentWeather('Madrid');
@@ -31,7 +36,7 @@ describe('WeatherService - Integration Tests', () => {
     10000 // timeout de 10 segundos
   );
 
-  test.skipIf(!process.env.WEATHER_API_KEY || process.env.WEATHER_API_KEY === 'test_key_for_ci')(
+  conditionalTest(
     'debe manejar ciudad inexistente correctamente',
     async () => {
       const result = await weatherService.getCurrentWeather('CiudadQueNoExiste12345');
