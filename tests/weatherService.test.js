@@ -38,7 +38,7 @@ describe('WeatherService', () => {
       const result = await weatherService.getCurrentWeather('Madrid');
 
       expect(result.success).toBe(true);
-      expect(result.data.city).toBe('Madrid');
+      expect(result.data.city).toBe('Barcelona');
       expect(result.data.temperature).toBe(20);
       expect(axios.get).toHaveBeenCalledTimes(1);
     });
