@@ -34,6 +34,7 @@ Aplicación Node.js que consulta información meteorológica en tiempo real util
 - ✅ Implementar integración continua (CI) con testing automatizado
 - ✅ Configurar despliegue continuo (CD) seguro
 - ✅ Gestionar secretos de forma segura (GitHub Secrets)
+- ✅ Despliegue en Render
 - ✅ Demostrar prácticas de rotación de claves
 - ✅ Documentar procesos de seguridad
 
@@ -343,7 +344,7 @@ Para proyectos enterprise, considera:
 
 ### Plataforma de Hosting
 
-**Render**: https://TU-APP.onrender.com
+**Render**: https://pipeline-cicd-seguridad.onrender.com/
 
 ### Despliegue Automático
 
@@ -353,6 +354,7 @@ El despliegue es completamente automático:
 2. GitHub Actions ejecuta los tests
 3. Si los tests pasan ✅, Render despliega automáticamente
 4. Nueva versión disponible en ~2-3 minutos
+5. Solo es temporal ya que es el plan gratuito de Render, no es permanente la duración del link.
 
 ### Configuración Manual en Render
 
