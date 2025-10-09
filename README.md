@@ -6,7 +6,7 @@
 
 > Trabajo Práctico de Seguridad Informática - Implementación de Pipeline CI/CD con Gestión Segura de Secretos
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Descripción](#-descripción)
 - [Características](#-características)
@@ -26,7 +26,7 @@
 
 ---
 
-## 📖 Descripción
+## Descripción
 
 Aplicación Node.js que consulta información meteorológica en tiempo real utilizando la API de OpenWeatherMap. El proyecto implementa un pipeline completo de CI/CD con GitHub Actions, enfocándose en las mejores prácticas de seguridad para la gestión de secretos y credenciales.
 
@@ -40,20 +40,20 @@ Aplicación Node.js que consulta información meteorológica en tiempo real util
 
 ---
 
-## ✨ Características
+## Características
 
-- 🌤️ **Consulta de clima en tiempo real** para cualquier ciudad del mundo
-- 📊 **Pronóstico extendido** de 5 días
-- 🔐 **Gestión segura de API Keys** (nunca expuestas en el código)
-- 🤖 **CI/CD automatizado** con GitHub Actions
-- 🧪 **Tests unitarios y de integración** con Jest
-- 🚀 **Despliegue automático** en Render
-- 🔄 **Script de rotación de claves** automatizado
-- 📝 **Documentación completa** de procesos de seguridad
+- **Consulta de clima en tiempo real** para cualquier ciudad del mundo
+- **Pronóstico extendido** de 5 días
+- **Gestión segura de API Keys** (nunca expuestas en el código)
+- **CI/CD automatizado** con GitHub Actions
+- **Tests unitarios y de integración** con Jest
+- **Despliegue automático** en Render
+- **Script de rotación de claves** automatizado
+- **Documentación completa** de procesos de seguridad
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 ### Backend
 - **Node.js** (v18.x) - Runtime de JavaScript
@@ -74,7 +74,7 @@ Aplicación Node.js que consulta información meteorológica en tiempo real util
 
 ---
 
-## 📦 Requisitos Previos
+## Requisitos Previos
 
 Antes de comenzar, asegúrate de tener instalado:
 
@@ -86,7 +86,7 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ### 1. Clonar el Repositorio
 
@@ -140,7 +140,7 @@ PORT=3000
 
 ---
 
-## 💻 Uso
+## Uso
 
 ### Modo Desarrollo
 
@@ -187,7 +187,7 @@ npm run rotate-keys
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 ci-cd-seguro-tp/
@@ -215,7 +215,7 @@ ci-cd-seguro-tp/
 
 ---
 
-## 🔄 Pipeline CI/CD
+## Pipeline CI/CD
 
 ### Flujo del Pipeline
 
@@ -254,7 +254,7 @@ Ver [.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml) para detalles com
 
 ---
 
-## 🔐 Gestión de Secrets
+## Gestión de Secrets
 
 ### Principios de Seguridad Implementados
 
@@ -340,7 +340,7 @@ Para proyectos enterprise, considera:
 
 ---
 
-## 🚀 Despliegue
+## Despliegue
 
 ### Plataforma de Hosting
 
@@ -410,7 +410,7 @@ curl https://tu-app.onrender.com/health
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Estrategia de Testing
 
@@ -470,10 +470,10 @@ expect(axios.get).toHaveBeenCalledTimes(1);
 ```
 
 **Ventajas:**
-- ⚡ Tests instantáneos
-- 🔒 No requiere API key
-- 🎯 Resultados predecibles
-- 💰 No consume cuota de API
+- Tests instantáneos
+- No requiere API key
+- Resultados predecibles
+- No consume cuota de API
 
 ---
 
@@ -483,10 +483,10 @@ expect(axios.get).toHaveBeenCalledTimes(1);
 
 La rotación periódica de claves es una **práctica crítica de seguridad**:
 
-- 🔐 Limita el impacto de claves comprometidas
-- ⏰ Reduce ventana de exposición
-- 📋 Cumple con normativas de seguridad
-- 🛡️ Minimiza riesgo de uso no autorizado
+- Limita el impacto de claves comprometidas
+- Reduce ventana de exposición
+- Cumple con normativas de seguridad
+- Minimiza riesgo de uso no autorizado
 
 ### Frecuencia Recomendada
 
@@ -543,9 +543,7 @@ Para automatización completa, el script podría:
 
 ---
 
-## 🛡️ Mejores Prácticas de Seguridad
-
-### ✅ DO (Hacer)
+## Mejores Prácticas de Seguridad
 
 - ✅ **Usar variables de entorno** para todos los secrets
 - ✅ **Rotar claves periódicamente** (30-90 días)
@@ -557,8 +555,6 @@ Para automatización completa, el script podría:
 - ✅ **Usar HTTPS** para todas las comunicaciones
 - ✅ **Validar datos de entrada** (sanitización)
 - ✅ **Mantener dependencias actualizadas**
-
-### ❌ DON'T (No Hacer)
 
 - ❌ **Hardcodear secrets en el código**
 - ❌ **Commitear archivos `.env`**
@@ -581,7 +577,7 @@ Para automatización completa, el script podría:
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Base URL
 
@@ -596,7 +592,7 @@ Información general de la API
 **Response:**
 ```json
 {
-  "message": "🌤️ API del Clima - TP Seguridad Informática",
+  "message": "API del Clima - TP Seguridad Informática",
   "endpoints": {
     "current": "/weather/:city - Obtener clima actual",
     "forecast": "/forecast/:city - Obtener pronóstico",
