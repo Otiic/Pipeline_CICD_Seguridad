@@ -478,7 +478,7 @@ expect(axios.get).toHaveBeenCalledTimes(1);
 
 ---
 
-## 🔄 Rotación de Claves
+## Rotación de Claves
 
 ### ¿Por Qué Rotar Claves?
 
