@@ -7,21 +7,21 @@
 
 ## Tabla de Contenidos
 
-- [Descripción](#-descripción)
-- [Características](#-características)
-- [Tecnologías](#-tecnologías)
-- [Requisitos Previos](#-requisitos-previos)
-- [Instalación](#-instalación)
-- [Configuración](#-configuración)
-- [Uso](#-uso)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Pipeline CI/CD](#-pipeline-cicd)
-- [Gestión de Secrets](#-gestión-de-secrets)
-- [Despliegue](#-despliegue)
-- [Testing](#-testing)
-- [Rotación de Claves](#-rotación-de-claves)
-- [Mejores Prácticas](#-mejores-prácticas-de-seguridad)
-- [API Endpoints](#-api-endpoints)
+- [Descripción](#descripción)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Requisitos Previos](#requisitos-previos)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Pipeline CI/CD](#pipeline-cicd)
+- [Gestión de Secrets](#gestión-de-secrets)
+- [Despliegue](#despliegue)
+- [Testing](#testing)
+- [Rotación de Claves](#rotación-de-claves)
+- [Mejores Prácticas](#mejores-prácticas-de-seguridad)
+- [API Endpoints](#api-endpoints)
 
 ---
 
