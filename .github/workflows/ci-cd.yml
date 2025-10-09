@@ -1,0 +1,75 @@
+name: CI/CD Pipeline
+
+# 🎯 Cuándo se ejecuta este workflow
+on:
+  push:
+    branches: [ main ]      # Cuando haces push a main
+  pull_request:
+    branches: [ main ]      # Cuando abres un Pull Request a main
+
+# 🔧 Jobs que se ejecutan
+jobs:
+  # ========================================
+  # JOB 1: Build y Test
+  # ========================================
+  build-and-test:
+    name: Build y Tests
+    runs-on: ubuntu-latest  # Máquina virtual Ubuntu
+    
+    steps:
+    # Paso 1: Descargar el código del repositorio
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+    
+    # Paso 2: Instalar Node.js
+    - name: 🟢 Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'  # Cachea node_modules para acelerar
+    
+    # Paso 3: Instalar dependencias
+    - name: 📦 Instalar dependencias
+      run: npm ci
+    
+    # Paso 4: Ejecutar tests
+    - name: 🧪 Ejecutar tests
+      run: npm test
+      env:
+        # Por ahora sin API key real (los tests usan mocks)
+        WEATHER_API_KEY: test_key_for_ci
+    
+    # Paso 5: Subir reporte de cobertura
+    - name: 📊 Subir cobertura
+      uses: codecov/codecov-action@v3
+      if: always()  # Ejecutar incluso si los tests fallan
+      with:
+        files: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+  # ========================================
+  # JOB 2: Linting (Opcional pero recomendado)
+  # ========================================
+  lint:
+    name: Verificar Código
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 📦 Instalar dependencias
+      run: npm ci
+    
+    # Verificar formato de código (lo agregaremos después)
+    - name: 🎨 Verificar formato
+      run: echo "✅ Verificación de formato (pendiente configurar ESLint)"
+      # Después lo cambiaremos por: npm run lint
