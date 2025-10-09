@@ -113,7 +113,7 @@ nano .env
 
 ---
 
-## ⚙️ Configuración
+## Configuración
 
 ### Variables de Entorno
 
@@ -128,7 +128,7 @@ NODE_ENV=development
 PORT=3000
 ```
 
-**⚠️ IMPORTANTE:** El archivo `.env` está en `.gitignore` y NUNCA debe ser commiteado.
+**IMPORTANTE:** El archivo `.env` está en `.gitignore` y NUNCA debe ser commiteado.
 
 ### Obtener API Key de OpenWeatherMap
 

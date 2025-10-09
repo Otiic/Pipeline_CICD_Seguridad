@@ -1,13 +1,13 @@
 name: CI/CD Pipeline
 
-# 🎯 Cuándo se ejecuta este workflow
+# Cuándo se ejecuta este workflow
 on:
   push:
     branches: [ master ]      # Cuando haces push a master
   pull_request:
     branches: [ master ]      # Cuando abres un Pull Request a master
 
-# 🔧 Jobs que se ejecutan
+# Jobs que se ejecutan
 jobs:
   # ========================================
   # JOB 1: Build y Test
@@ -18,35 +18,35 @@ jobs:
     
     steps:
     # Paso 1: Descargar el código del repositorio
-    - name: 📥 Checkout código
+    - name: Checkout código
       uses: actions/checkout@v4
     
     # Paso 2: Instalar Node.js
-    - name: 🟢 Configurar Node.js
+    - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'  # Cachea node_modules para acelerar
     
     # Paso 3: Instalar dependencias
-    - name: 📦 Instalar dependencias
+    - name: Instalar dependencias
       run: npm ci
 
     # Paso 3.5: Verificar que los secrets están configurados
-    - name: 🔐 Verificar secrets
+    - name: Verificar secrets
       run: node scripts/check-secrets.js
       env:
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
     
     # Paso 4: Ejecutar tests
-    - name: 🧪 Ejecutar tests
+    - name: Ejecutar tests
       run: npm test
       env:
         # Por ahora sin API key real (los tests usan mocks)
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
     
     # Paso 5: Subir reporte de cobertura
-    - name: 📊 Subir cobertura
+    - name: Subir cobertura
       uses: codecov/codecov-action@v3
       if: always()  # Ejecutar incluso si los tests fallan
       with:
@@ -63,20 +63,20 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: 📥 Checkout código
+    - name: Checkout código
       uses: actions/checkout@v4
     
-    - name: 🟢 Configurar Node.js
+    - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
     
-    - name: 📦 Instalar dependencias
+    - name: Instalar dependencias
       run: npm ci
     
     # Verificar formato de código (lo agregaremos después)
-    - name: 🎨 Verificar formato
+    - name: Verificar formato
       run: echo "✅ Verificación de formato (pendiente configurar ESLint)"
       # Después lo cambiaremos por: npm run lint
 
@@ -90,14 +90,14 @@ jobs:
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     
     steps:
-    - name: 🚀 Trigger Deploy en Render
+    - name: Trigger Deploy en Render
       run: |
         echo "✅ Tests pasaron - Render desplegará automáticamente"
-        echo "🔗 URL: https://cicd-seguro-tp.onrender.com"
-        echo "📝 Render detecta el push a master y despliega automáticamente"
+        echo "URL: https://cicd-seguro-tp.onrender.com"
+        echo "Render detecta el push a master y despliega automáticamente"
     
     # Opcional: Notificar que el deploy fue exitoso
-    - name: 📢 Deploy notification
+    - name: Deploy notification
       run: |
-        echo "🎉 Aplicación desplegada exitosamente"
+        echo "Aplicación desplegada exitosamente"
         echo "Timestamp: $(date)"

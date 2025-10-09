@@ -7,7 +7,7 @@
 
 const chalk = require('chalk') || { green: (s) => s, red: (s) => s, yellow: (s) => s };
 
-console.log('\n🔐 Verificando configuración de secrets...\n');
+console.log('\nVerificando configuración de secrets...\n');
 
 const requiredSecrets = [
   {
