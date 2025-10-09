@@ -91,8 +91,8 @@ Antes de comenzar, asegúrate de tener instalado:
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/TU-REPO.git
-cd TU-REPO
+git clone https://github.com/Otiic/Pipeline_CICD_Seguridad
+cd Pipeline_CICD_Seguridad
 ```
 
 ### 2. Instalar Dependencias
