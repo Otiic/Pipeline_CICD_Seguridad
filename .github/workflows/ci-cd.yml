@@ -31,13 +31,19 @@ jobs:
     # Paso 3: Instalar dependencias
     - name: 📦 Instalar dependencias
       run: npm ci
+
+    # Paso 3.5: Verificar que los secrets están configurados
+    - name: 🔐 Verificar secrets
+      run: node scripts/check-secrets.js
+      env:
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
     
     # Paso 4: Ejecutar tests
     - name: 🧪 Ejecutar tests
       run: npm test
       env:
         # Por ahora sin API key real (los tests usan mocks)
-        WEATHER_API_KEY: test_key_for_ci
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
     
     # Paso 5: Subir reporte de cobertura
     - name: 📊 Subir cobertura

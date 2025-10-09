@@ -6,3 +6,20 @@
 
 ## Descripción
 Aplicación de ejemplo con pipeline CI/CD seguro usando GitHub Actions.
+
+## 🔐 Gestión de Secrets
+
+### Secrets Configurados
+
+Este proyecto utiliza los siguientes secrets:
+
+| Secret | Descripción | Dónde obtenerlo |
+|--------|-------------|-----------------|
+| `WEATHER_API_KEY` | API Key de OpenWeatherMap | https://openweathermap.org/api |
+
+### Configuración Local
+
+1. Copia el archivo de ejemplo:
+    cp .env.example .env
+2. Edita .env y agrega tus valores reales:
+    WEATHER_API_KEY=tu_clave_aqui
