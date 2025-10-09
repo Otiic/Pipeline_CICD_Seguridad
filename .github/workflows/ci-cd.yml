@@ -3,9 +3,9 @@ name: CI/CD Pipeline
 # 🎯 Cuándo se ejecuta este workflow
 on:
   push:
-    branches: [ main ]      # Cuando haces push a main
+    branches: [ master ]      # Cuando haces push a master
   pull_request:
-    branches: [ main ]      # Cuando abres un Pull Request a main
+    branches: [ master ]      # Cuando abres un Pull Request a master
 
 # 🔧 Jobs que se ejecutan
 jobs:
