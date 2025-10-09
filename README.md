@@ -1,8 +1,7 @@
-# 🔐 Pipeline CI/CD Seguro - Weather API
+# Pipeline CI/CD Seguro - Weather API
 
-![CI/CD Status](https://github.com/TU-USUARIO/TU-REPO/workflows/CI%2FCD%20Pipeline/badge.svg)
+![CI/CD Status](https://github.com/Otiic/Pipeline_CICD_Seguridad/workflows/CI%2FCD%20Pipeline/badge.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 > Trabajo Práctico de Seguridad Informática - Implementación de Pipeline CI/CD con Gestión Segura de Secretos
 
